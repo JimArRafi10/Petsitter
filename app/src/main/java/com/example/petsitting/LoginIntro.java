@@ -22,7 +22,7 @@ public class LoginIntro extends AppCompatActivity {
                 finish();
 
             }
-        }, 4000);
+        }, 2000);
 
     }
 }

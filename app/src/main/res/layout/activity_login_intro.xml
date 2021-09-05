@@ -29,9 +29,11 @@
         android:layout_width="359dp"
         android:layout_height="52dp"
         android:layout_marginBottom="16dp"
+        android:gravity="center"
         android:text="Get a new experience for your pet"
         app:layout_constraintBottom_toTopOf="@+id/txtLoginSubHeader"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.692"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
