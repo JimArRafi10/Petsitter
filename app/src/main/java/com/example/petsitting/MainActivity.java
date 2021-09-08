@@ -63,7 +63,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         auth = FirebaseAuth.getInstance();
 
         //Button for Main Fragment Right now
-        btnlogout = findViewById(R.id.btnlogout);
         verifyEmailMsg = findViewById(R.id.verifyEmailMsg);
         verifyEmailbtn = findViewById(R.id.verifyEmailbtn);
 
@@ -77,8 +76,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.add(R.id.fragmentContainer,new MainFragment());
         fragmentTransaction.commit();
-
-
 
 
     }
@@ -131,30 +128,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
         if(item.getItemId() == R.id.logout){
             //logout fragment
-            fragmentManager = getSupportFragmentManager();
-            fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.fragmentContainer,new LogoutFragment());
-            fragmentTransaction.commit();
-
+            FirebaseAuth.getInstance().signOut();
+            Intent loginActivity = new Intent(getApplicationContext(),LoginActivity.class);
+            startActivity(loginActivity);
+            finish();
         }
 
         drawerLayout.closeDrawer(GravityCompat.START); //For closing the drawer
         return true;
     }
 
-    @Override
-    public void onLogoutBtnSelected() {
-        //This logout button in the MainFragment
-        btnlogout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
-                finish();
-            }
-        });
 
-    }
 
     @Override
     public void onEmailverifyBtnSelected() {

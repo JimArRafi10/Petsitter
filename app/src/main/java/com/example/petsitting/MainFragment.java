@@ -23,18 +23,11 @@ public class MainFragment  extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_main, container,false);
-
-        Button btnlogout = view.findViewById(R.id.btnlogout);
         Button verifyEmailbtn = view.findViewById(R.id.verifyEmailbtn);
         TextView verifyEmailMsg = view.findViewById(R.id.verifyEmailMsg);
 
 
-        btnlogout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                listener.onLogoutBtnSelected();
-            }
-        });
+
         verifyEmailbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,7 +57,7 @@ public class MainFragment  extends Fragment {
     }
 
     public interface OnFragmentItemSelectedListener{
-         void onLogoutBtnSelected();
+
          void onEmailverifyBtnSelected();
          void onEmailverifyMsgSelected();
     }

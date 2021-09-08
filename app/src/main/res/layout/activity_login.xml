@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
 
-
     <TextView
         android:id="@+id/btntextview"
         android:layout_width="231dp"
@@ -84,5 +83,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
