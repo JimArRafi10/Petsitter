@@ -22,10 +22,9 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,MainFragment.OnFragmentItemSelectedListener{
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
-    TextView verifyEmailMsg;
-    Button verifyEmailbtn, btnlogout;
+
     FirebaseAuth auth;
 
     DrawerLayout drawerLayout;
@@ -62,14 +61,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         auth = FirebaseAuth.getInstance();
 
-        //Button for Main Fragment Right now
-        verifyEmailMsg = findViewById(R.id.verifyEmailMsg);
-        verifyEmailbtn = findViewById(R.id.verifyEmailbtn);
-
-        if(!auth.getCurrentUser().isEmailVerified()){
-            verifyEmailbtn.setVisibility(View.VISIBLE);
-            verifyEmailMsg.setVisibility(View.VISIBLE);
-        }
 
         //Load default fragment(MainFragment)
         fragmentManager = getSupportFragmentManager();
@@ -136,35 +127,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         drawerLayout.closeDrawer(GravityCompat.START); //For closing the drawer
         return true;
-    }
-
-
-
-    @Override
-    public void onEmailverifyBtnSelected() {
-        //This verifyEmail in the MainFragment
-        verifyEmailbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //send verification message
-                auth.getCurrentUser().sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        Toast.makeText(MainActivity.this, "Verification Email Sent", Toast.LENGTH_SHORT).show();
-                        verifyEmailbtn.setVisibility(View.GONE);
-                        verifyEmailMsg.setVisibility(View.GONE);
-                    }
-                });
-            }
-        });
-
-
-    }
-
-    @Override
-    public void onEmailverifyMsgSelected() {
-      // It's just a text/msg in MainFragment
-
     }
 
 }

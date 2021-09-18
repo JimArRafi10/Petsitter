@@ -7,15 +7,111 @@
     android:layout_height="match_parent">
 
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="291dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="300dp"
-        android:text="Profile Fragment"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.766"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
+   <ImageView
+       android:id="@+id/et_profile_image"
+       android:layout_width="113dp"
+       android:layout_height="105dp"
+       android:layout_marginTop="100dp"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       tools:srcCompat="@drawable/drawer_background_img" />
+
+   <TextView
+       android:id="@+id/et_profile_full_name"
+       android:layout_width="290dp"
+       android:layout_height="40dp"
+       android:layout_marginTop="28dp"
+       android:ems="10"
+       android:textColor="@color/black"
+       android:hint="Full name"
+       android:background="@drawable/edit_text_background"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.442"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/et_profile_image" />
+
+   <TextView
+       android:id="@+id/et_profile_phn_no"
+       android:layout_width="290dp"
+       android:layout_height="40dp"
+       android:layout_marginTop="24dp"
+       android:textColor="@color/black"
+       android:ems="10"
+       android:hint="Phone number"
+       android:background="@drawable/edit_text_background"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.442"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/et_profile_full_name" />
+
+   <TextView
+       android:id="@+id/et_profile_address"
+       android:layout_width="290dp"
+       android:layout_height="40dp"
+       android:layout_marginTop="24dp"
+       android:textColor="@color/black"
+       android:ems="10"
+       android:hint="Address"
+       android:background="@drawable/edit_text_background"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.442"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/et_profile_phn_no" />
+
+   <TextView
+       android:id="@+id/et_profile_nid"
+       android:layout_width="290dp"
+       android:layout_height="40dp"
+       android:layout_marginTop="24dp"
+       android:ems="10"
+       android:hint="Nid"
+       android:textColor="@color/black"
+       android:background="@drawable/edit_text_background"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.442"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/et_profile_address" />
+
+   <TextView
+       android:id="@+id/et_profile_availability"
+       android:layout_width="290dp"
+       android:layout_height="40dp"
+       android:layout_marginTop="24dp"
+       android:background="@drawable/edit_text_background"
+       android:ems="10"
+       android:textColor="@color/black"
+       android:hint="Availability"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.446"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/et_profile_nid" />
+
+   <TextView
+       android:id="@+id/et_profile_price"
+       android:layout_width="290dp"
+       android:layout_height="40dp"
+       android:layout_marginTop="24dp"
+       android:ems="10"
+       android:textColor="@color/black"
+       android:hint="Rate per day"
+       android:background="@drawable/edit_text_background"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.442"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/et_profile_availability" />
+
+   <Button
+       android:id="@+id/et_profile_edit_btn"
+       android:layout_width="215dp"
+       android:layout_height="57dp"
+       android:layout_marginTop="36dp"
+       android:text="Edit Profile"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.427"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/et_profile_price" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

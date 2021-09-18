@@ -16,52 +16,17 @@ import org.w3c.dom.Text;
 
 public class MainFragment  extends Fragment {
 
-    private OnFragmentItemSelectedListener listener;
+
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_main, container,false);
-        Button verifyEmailbtn = view.findViewById(R.id.verifyEmailbtn);
-        TextView verifyEmailMsg = view.findViewById(R.id.verifyEmailMsg);
 
-
-
-        verifyEmailbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                listener.onEmailverifyBtnSelected();
-            }
-        });
-        verifyEmailMsg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                listener.onEmailverifyMsgSelected();
-            }
-        });
 
         return view;
     }
 
-    @Override
-    public void onAttach(@NonNull Context context) {
-        super.onAttach(context);
-
-        if(context instanceof OnFragmentItemSelectedListener){
-            listener = (OnFragmentItemSelectedListener) context;
-        }
-        else{
-            throw  new ClassCastException(context.toString()+ "must implemnet listener");
-        }
-    }
-
-    public interface OnFragmentItemSelectedListener{
-
-         void onEmailverifyBtnSelected();
-         void onEmailverifyMsgSelected();
-    }
-
-    
 
 }
