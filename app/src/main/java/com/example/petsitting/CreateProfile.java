@@ -38,7 +38,7 @@ import java.util.Map;
 
 public class CreateProfile extends AppCompatActivity {
 
-    EditText profile_full_name,profile_phn_no,profile_nid,profile_address,profile_availability,profile_price;
+    EditText profile_full_name,profile_phn_no,profile_nid,profile_address,profile_availability,profile_price,profile_gmail;
     Button profile_save_btn;
     ImageView profile_image;
     Uri  imageUri;
@@ -67,6 +67,7 @@ public class CreateProfile extends AppCompatActivity {
         profile_address = findViewById(R.id.profile_address);
         profile_availability = findViewById(R.id.profile_availability);
         profile_price = findViewById(R.id.profile_price);
+        profile_gmail= findViewById(R.id.profile_gmail);
         profile_save_btn = findViewById(R.id.profile_save_btn);
 
 
@@ -127,10 +128,11 @@ public class CreateProfile extends AppCompatActivity {
         String address= profile_address.getText().toString();
         String availability= profile_availability.getText().toString();
         String price= profile_price.getText().toString();
+        String gmail = profile_gmail.getText().toString();
 
 
        if(!TextUtils.isEmpty(full_name) || !TextUtils.isEmpty(phone_no) || !TextUtils.isEmpty(address) || 
-               !TextUtils.isEmpty(availability) || !TextUtils.isEmpty(price) || !TextUtils.isEmpty(nid) || imageUri!=null)
+               !TextUtils.isEmpty(availability) || !TextUtils.isEmpty(price) || !TextUtils.isEmpty(nid) || !TextUtils.isEmpty(gmail) || imageUri!=null)
        {
            final  StorageReference reference = storageReference.child(System.currentTimeMillis()+"."+ getFileExt(imageUri));
            uploadTask = reference.putFile(imageUri);
@@ -156,6 +158,7 @@ public class CreateProfile extends AppCompatActivity {
                        profile.put("availability", availability);
                        profile.put("price", price);
                        profile.put("nid", nid);
+                       profile.put("gmail", gmail);
                        profile.put("uid", currentUserId);
                        profile.put("url", downloadUri.toString());
 
@@ -166,6 +169,7 @@ public class CreateProfile extends AppCompatActivity {
                        member.setAvailability(availability);
                        member.setNid(nid);
                        member.setPrice(price);
+                       member.setgmail(gmail);
                        member.setUid(currentUserId);
                        member.setUrl(downloadUri.toString());
 

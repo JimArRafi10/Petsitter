@@ -28,7 +28,7 @@ import com.squareup.picasso.Picasso;
 public class ProfileFragment extends Fragment implements View.OnClickListener {
 
     ImageView et_profile_image;
-    TextView et_profile_full_name,et_profile_phn_no,et_profile_address,et_profile_nid,et_profile_availability,et_profile_price;
+    TextView et_profile_full_name,et_profile_phn_no,et_profile_address,et_profile_nid,et_profile_availability,et_profile_price, et_profile_gmail;
     Button et_profile_edit_btn;
 
 
@@ -54,6 +54,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         et_profile_availability = getActivity().findViewById(R.id.et_profile_availability);
         et_profile_price = getActivity().findViewById(R.id.et_profile_price);
         et_profile_edit_btn= getActivity().findViewById(R.id.et_profile_edit_btn);
+        et_profile_gmail = getActivity().findViewById(R.id.et_profile_gmail);
 
         et_profile_edit_btn.setOnClickListener(this);
 
@@ -96,6 +97,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
                             String price = task.getResult().getString("price");
                             String nid = task.getResult().getString("nid");
                             String url = task.getResult().getString("url");
+                            String gmail = task.getResult().getString("gmail");
                             //String uid = task.getResult().getString("uid ");
 
                             Picasso.get().load(url).into(et_profile_image);
@@ -105,6 +107,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
                             et_profile_availability.setText(availability);
                             et_profile_price.setText(price);
                             et_profile_nid.setText(nid);
+                            et_profile_gmail.setText(gmail);
 
 
                         }else{

@@ -81,10 +81,10 @@
         android:id="@+id/up_update_save_btn"
         android:layout_width="215dp"
         android:layout_height="57dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="112dp"
         android:text="Update Profile"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.448"
+        app:layout_constraintHorizontal_bias="0.433"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/up_profile_price" />
 
@@ -92,7 +92,7 @@
         android:id="@+id/up_full_name"
         android:layout_width="290dp"
         android:layout_height="40dp"
-        android:layout_marginTop="136dp"
+        android:layout_marginTop="80dp"
         android:background="@drawable/edit_text_background"
         android:ems="10"
         android:hint="full Name"
@@ -102,6 +102,18 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/up_profile_gmail"
+        android:layout_width="290dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:background="@drawable/edit_text_background"
+        android:hint="Gmail"
+        app:layout_constraintEnd_toEndOf="@+id/up_profile_price"
+        app:layout_constraintStart_toStartOf="@+id/up_profile_price"
+        app:layout_constraintTop_toBottomOf="@+id/up_profile_price" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

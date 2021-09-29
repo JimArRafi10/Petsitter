@@ -2,9 +2,10 @@ package com.example.petsitting;
 
 public class All_UserMember {
 
-    String  full_name, phone_no, address, availability, price , nid, uid, url;
+    String  full_name, phone_no, address, availability, price , nid, uid, url, gmail;
 
     public All_UserMember(){
+
 
     }
 
@@ -74,4 +75,11 @@ public class All_UserMember {
     }
 
 
+    public void setgmail(String gmail) {
+        this.gmail = gmail;
+    }
+
+    public String getgmail() {
+        return gmail;
+    }
 }

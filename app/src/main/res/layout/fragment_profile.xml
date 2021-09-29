@@ -7,16 +7,19 @@
     android:layout_height="match_parent">
 
 
-
-   <ImageView
+   <de.hdodenhof.circleimageview.CircleImageView
        android:id="@+id/et_profile_image"
-       android:layout_width="113dp"
-       android:layout_height="105dp"
-       android:layout_marginTop="100dp"
+       android:layout_width="143dp"
+       android:layout_height="116dp"
+       android:layout_marginTop="52dp"
+       app:civ_border_color="#000000"
+       app:civ_border_width="2.4dp"
+       android:src="#1F000000"
        app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.452"
        app:layout_constraintStart_toStartOf="parent"
        app:layout_constraintTop_toTopOf="parent"
-       tools:srcCompat="@drawable/drawer_background_img" />
+       tools:src="@drawable/drawer_background_img" />
 
    <TextView
        android:id="@+id/et_profile_full_name"
@@ -104,13 +107,25 @@
 
    <Button
        android:id="@+id/et_profile_edit_btn"
-       android:layout_width="215dp"
-       android:layout_height="57dp"
-       android:layout_marginTop="36dp"
+       android:layout_width="179dp"
+       android:layout_height="48dp"
+       android:layout_marginTop="88dp"
        android:text="Edit Profile"
        app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintHorizontal_bias="0.427"
+       app:layout_constraintHorizontal_bias="0.418"
        app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/et_profile_price" />
+
+   <EditText
+       android:id="@+id/et_profile_gmail"
+       android:layout_width="290dp"
+       android:layout_height="40dp"
+       android:layout_marginTop="24dp"
+       android:ems="10"
+       android:hint="Gmail"
+       android:background="@drawable/edit_text_background"
+       app:layout_constraintEnd_toEndOf="@+id/et_profile_price"
+       app:layout_constraintStart_toStartOf="@+id/et_profile_price"
        app:layout_constraintTop_toBottomOf="@+id/et_profile_price" />
 
 

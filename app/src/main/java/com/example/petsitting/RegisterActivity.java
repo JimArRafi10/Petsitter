@@ -82,7 +82,7 @@ public class RegisterActivity extends AppCompatActivity {
                     public void onSuccess(AuthResult authResult) {
                         //send user to next page
                         startActivity(new Intent(getApplicationContext(),MainActivity.class));
-                        finish();
+                        finish(); 
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override

@@ -32,7 +32,7 @@ import java.util.Map;
 
 public class UpdateProfile extends AppCompatActivity {
 
-    EditText up_full_name, up_profile_phn_no, up_profile_address, up_profile_nid, up_profile_availability, up_profile_price;
+    EditText up_full_name, up_profile_phn_no, up_profile_address, up_profile_nid, up_profile_availability, up_profile_price,up_profile_gmail;
     Button up_update_save_btn;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference databaseReference;
@@ -57,6 +57,7 @@ public class UpdateProfile extends AppCompatActivity {
         up_profile_availability = findViewById(R.id.up_profile_availability);
         up_profile_price = findViewById(R.id.up_profile_price);
         up_update_save_btn = findViewById(R.id.up_update_save_btn);
+        up_profile_gmail = findViewById(R.id.up_profile_gmail);
 
         up_update_save_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,6 +89,7 @@ public class UpdateProfile extends AppCompatActivity {
                             String nid = task.getResult().getString("nid");
                             //String url = task.getResult().getString("url");
                             //String uid = task.getResult().getString("uid ");
+                            String gmail= task.getResult().getString("gmail");
 
                             //Picasso.get().load(url).into(et_profile_image);
                             up_full_name.setText(full_name);
@@ -96,6 +98,7 @@ public class UpdateProfile extends AppCompatActivity {
                             up_profile_availability.setText(availability);
                             up_profile_price.setText(price);
                             up_profile_nid.setText(nid);
+                            up_profile_gmail.setText(gmail);
 
 
                         } else {
@@ -113,6 +116,7 @@ public class UpdateProfile extends AppCompatActivity {
         String availability = up_profile_availability.getText().toString();
         String price = up_profile_price.getText().toString();
         String nid = up_profile_nid.getText().toString();
+        String gmail = up_profile_gmail.getText().toString();
 
         final DocumentReference sDoc = db.collection("All users").document(currentUserId);
 
@@ -127,6 +131,7 @@ public class UpdateProfile extends AppCompatActivity {
                 transaction.update(sDoc, "availability", availability);
                 transaction.update(sDoc, "price", price);
                 transaction.update(sDoc, "nid", nid);
+                transaction.update(sDoc, "gmail", gmail);
                 transaction.update(sDoc, "uid", currentUserId);
 
                 return null;
